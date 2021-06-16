@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>款号查询</title>
+</head>
+<body>
+    <h1 style="text-align: center">查询的款号详情</h1>
+    <table border="1" cellpadding="10">
+    <a href="/shop/jinhuo">返回</a>
+        <thead>
+            <tr>
+                <th>店铺</th>
+                <th>商品款号</th>
+                <th>商品名称</th>
+                <th>颜色</th>
+                <th>M号</th>
+                <th>L号</th>
+                <th>XL号</th>
+                <th>2XL号</th>
+                <th>3XL号</th>
+                <th>4XL号</th>
+                <th>总数</th>
+                <th>单价</th>
+                <th>总价</th>
+                <th>进货时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for good in goods %}
+                <tr>
+                    <td>{{ good.shop_name }}</td>
+                    <td>{{ good.number }}</td>
+                    <td>{{ good.sort }}</td>
+                    <td>{{ good.color }}</td>
+                    <td>{{ good.m_total }}</td>
+                    <td>{{ good.l_total }}</td>
+                    <td>{{ good.xl_total }}</td>
+                    <td>{{ good.xxl_total }}</td>
+                    <td>{{ good.xxxl_total }}</td>
+                    <td>{{ good.xxxxl_total }}</td>
+                    <td>{{ good.total }}</td>
+                    <th>{{ good.price }}</th>
+                    <th>{{ good.price_total }}</th>
+                    <td>{{ good.c_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

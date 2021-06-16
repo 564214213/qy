@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返货调货列表</title>
+</head>
+<body>
+    <h1 style="text-align: center">返货调货详情</h1>
+    <a href="/shop/fanhuo/add_fanhuo">添加返货调货</a>
+    <a href="/shop">退出返货</a>
+    <form action="/shop/fanhuo/search_fanhuo" method="get">
+        <p>
+            输入款号查询：<input type="text" name="number">
+            <input type="submit" value="查询">{{ error }}
+        </p>
+    </form>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>店铺</th>
+                <th>商品款号</th>
+                <th>商品名称</th>
+                <th>颜色</th>
+                <th>M</th>
+                <th>L</th>
+                <th>XL</th>
+                <th>2XL</th>
+                <th>3XL</th>
+                <th>4XL</th>
+                <th>总数</th>
+                <th>单价</th>
+                <th>价格总计</th>
+                <th>备注</th>
+                <th>返货时间</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for good in all_goods %}
+                    <tr>
+                        <td>{{ good.shop_name }}</td>
+                        <td>{{ good.number }}</td>
+                        <td>{{ good.sort }}</td>
+                        <td>{{ good.color }}</td>
+                        <td>{{ good.m_total }}</td>
+                        <td>{{ good.l_total }}</td>
+                        <td>{{ good.xl_total }}</td>
+                        <td>{{ good.xxl_total }}</td>
+                        <td>{{ good.xxxl_total }}</td>
+                        <td>{{ good.xxxxl_total }}</td>
+                        <td>{{ good.total }}</td>
+                        <td>{{ good.price }}</td>
+                        <td>{{ good.price_total }}</td>
+                        <td>{{ good.tips }}</td>
+                        <td>{{ good.c_time }}</td>
+                    </tr>
+                {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>

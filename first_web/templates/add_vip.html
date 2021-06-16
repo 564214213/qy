@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增会员信息</title>
+</head>
+<body>
+    <h1 style="text-align: center;font-size: 40px">会员单次积分</h1>
+    <a href="/shop/vip" style="font-size: 20px">返回</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p style="font-size: 30px;color:red">{{ error }}</p>
+        <p style="font-size: 25px">请输入手机号：<input type="text" name="mobile" ></p>
+        <p style="font-size: 25px">请输入会员名字：<input type="text" name="name" ></p>
+        <p style="font-size: 25px">请输入此次积分：<input type="text" name="jifen_one" value="{{ 0 }}"></p>
+        <label style="font-size: 25px">是否预存:</label>
+            <select style="font-size: 35px" name="yucun_if">
+                <option value="1" >是</option>
+                <option value="2" selected>否</option>
+            </select>
+
+        <p style="font-size: 25px">如果是预存消费，请输入消费预存的钱数：<input type="text" name="yucun" value="{{ 0 }}"></p>
+
+        <button>提交</button>
+    </form>
+</body>
+</html>

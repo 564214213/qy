@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 style="font-size: 30px;text-align: center">会员查询结果</h1>
+    <a href="/shop/vip" style="font-size: 20px">返回</a>
+    <table border="1" cellpadding="20" class="a2">
+        <thead>
+        <tr>
+            <td>店铺</td>
+            <td>手机号</td>
+            <td>会员名</td>
+            <td>积分剩余</td>
+            <td>历史总积分</td>
+            <td>预存总金额</td>
+            <td>预存次数</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for vip in vips %}
+            <tr>
+                <td>{{ vip.shop_name }}</td>
+                <td><a href="/shop/vip/vip_detial/?mobile={{ vip.mobile }}" style="text-decoration: none">{{ vip.mobile }}</a></td>
+                <td>{{ vip.name }}</td>
+                <td>{{ vip.jifen_total }}</td>
+                <td>{{ vip.jifen_history }}</td>
+                <td>{{ vip.yucun }}</td>
+                <td>{{ vip.yucun_total }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

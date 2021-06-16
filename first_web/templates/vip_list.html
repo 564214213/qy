@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员</title>
+    <style>
+        .a1{
+            overflow: hidden;
+        }
+        .a1 a{
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .a1 li{
+            float: left;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">会员管理</h1>
+    <ul class="a1">
+        <li><a href="/shop/vip/add_vip">给会员积分</a></li>
+        <li><a href="/shop/vip/add_yucun" >会员预存</a></li>
+        <li><a href="/shop/vip/duihuan">积分兑换</a></li>
+        <li><a href="/shop">退出会员系统</a></li>
+    </ul>
+    <form action="/shop/vip/search_vip/" method="get">
+        <p>
+            请输入查询的会员号：<input type="text" name="mobile">
+            <input type="submit" value="查询">{{ error }}
+        </p>
+    </form>
+    <table border="1" cellpadding="20" class="a2">
+        <thead>
+        <tr>
+            <td>店铺</td>
+            <td>手机号</td>
+            <td>会员名</td>
+            <td>积分剩余</td>
+            <td>历史总积分</td>
+            <td>预存总金额</td>
+            <td>预存次数</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for vip in all_vip %}
+            <tr>
+                <td>{{ vip.shop_name }}</td>
+                <td><a href="/shop/vip/vip_detial/?mobile={{ vip.mobile }}" style="text-decoration: none">{{ vip.mobile }}</a></td>
+                <td>{{ vip.name }}</td>
+                <td>{{ vip.jifen_total }}</td>
+                <td>{{ vip.jifen_history }}</td>
+                <td>{{ vip.yucun }}</td>
+                <td>{{ vip.yucun_total }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>销售单</title>
+    <style>
+        .a1{
+            overflow: hidden;
+        }
+        .a1 li{
+            float: left;
+            margin: 20px;
+        }
+        .a1 a{
+            text-decoration: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">销售详情</h1>
+    <ul class="a1">
+        <li><a href="/shop/xiaoshou/add_xiaoshou">添加销售记录</a></li>
+        <li><a href="/shop">退出销售</a></li>
+    </ul>
+    <form action="/shop/xiaoshou/search_xiaoshou" method="get">
+        <p>
+            输入款号查询：<input type="text" name="number">
+            <input type="submit" value="查询" >{{ error }}
+        </p>
+    </form>
+    <table border="1" cellpadding="30">
+        <thead>
+        <tr>
+            <th>店铺</th>
+            <th>商品款号</th>
+            <th>商品名称</th>
+            <th>颜色</th>
+            <th>M</th>
+            <th>L</th>
+            <th>XL</th>
+            <th>2XL</th>
+            <th>3XL</th>
+            <th>4XL</th>
+            <th>总件数</th>
+            <th>出售时间</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for good in all_goods %}
+                <tr>
+                    <td>{{ good.shop_name }}</td>
+                    <td>{{ good.number }}</td>
+                    <td>{{ good.sort }}</td>
+                    <td>{{ good.color }}</td>
+                    <td>{{ good.m_total }}</td>
+                    <td>{{ good.l_total }}</td>
+                    <td>{{ good.xl_total }}</td>
+                    <td>{{ good.xxl_total }}</td>
+                    <td>{{ good.xxxl_total }}</td>
+                    <td>{{ good.xxxxl_total }}</td>
+                    <td>{{ good.xiaoshou_total }}</td>
+                    <td>{{ good.c_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加新的销售</title>
+</head>
+<body>
+    <h1 style="text-align: center">今日商品销售</h1>
+    <a href="/shop/xiaoshou">返回</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>商品款号：<input type="text" name="number">{{ error }}</p>
+        <p>颜色：<input type="text" name="color"></p>
+        <p>出售M：<input type="text" name="m_total" value="{{ 0 }}"></p>
+        <p>出售L：<input type="text" name="l_total" value="{{ 0 }}"></p>
+        <p>出售XL：<input type="text" name="xl_total" value="{{ 0 }}"></p>
+        <p>出售2XL：<input type="text" name="xxl_total" value="{{ 0 }}"></p>
+        <p>出售3XL：<input type="text" name="xxxl_total" value="{{ 0 }}"></p>
+        <p>出售4XL：<input type="text" name="xxxxl_total" value="{{ 0 }}"></p>
+        <button>提交</button>
+    </form>
+</body>
+</html>

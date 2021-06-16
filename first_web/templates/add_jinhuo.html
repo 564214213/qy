@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加的货物详情</title>
+</head>
+<body>
+    <h1 style="text-align: center">增加的商品详情</h1>
+    <a href="/shop/jinhuo">返回</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>商品款号：<input type="text" name="number">{{ error }}</p>
+        <p>商品名称：<input type="text" name="sort"></p>
+        <p>颜色:<input type="text" name="color"></p>
+        <p>单价：<input type="text" name="price"></p>
+        <p>M号：<input type="text" name="m_total" value="{{ 0 }}"></p>
+        <p>L号：<input type="text" name="l_total" value="{{ 0 }}"></p>
+        <p>XL号：<input type="text" name="xl_total" value="{{ 0 }}"></p>
+        <p>2XL号：<input type="text" name="xxl_total" value="{{ 0 }}"></p>
+        <p>3XL号：<input type="text" name="xxxl_total" value="{{ 0 }}"></p>
+        <p>4XL号：<input type="text" name="xxxxl_total" value="{{ 0 }}"></p>
+        <button>提交</button>
+    </form>
+</body>
+</html>

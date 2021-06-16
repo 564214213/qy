@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>销售款号查询</title>
+</head>
+<body>
+    <h1 style="text-align: center">查询的销售款号详情</h1>
+    <table border="1" cellpadding="30">
+    <a href="/shop/xiaoshou">返回</a>
+        <thead>
+            <tr>
+                <th>店铺</th>
+                <th>商品款号</th>
+                <th>商品名称</th>
+                <th>颜色</th>
+                <th>M</th>
+                <th>L</th>
+                <th>XL</th>
+                <th>2XL</th>
+                <th>3XL</th>
+                <th>4XL</th>
+                <th>总件数</th>
+                <th>出售时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for good in goods %}
+                <tr>
+                    <td>{{ good.shop_name }}</td>
+                    <td>{{ good.number }}</td>
+                    <td>{{ good.sort }}</td>
+                    <td>{{ good.color }}</td>
+                    <td>{{ good.m_total }}</td>
+                    <td>{{ good.l_total }}</td>
+                    <td>{{ good.xl_total }}</td>
+                    <td>{{ good.xxl_total }}</td>
+                    <td>{{ good.xxxl_total }}</td>
+                    <td>{{ good.xxxxl_total }}</td>
+                    <td>{{ good.xiaoshou_total }}</td>
+                    <td>{{ good.c_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员详情</title>
+</head>
+<body>
+    <h1 style="font-size: 35px;text-align: center">会员详情</h1>
+    <a href="/shop/vip">返回</a>
+    <table border="1" cellpadding="20">
+        <thead>
+        <tr>
+            <th>店铺</th>
+            <th>会员手机号</th>
+            <th>会员名字</th>
+            <th>兑换的积分</th>
+            <th>获得的积分</th>
+            <th>时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for vip in all_vip %}
+            <tr>
+            <td>{{ vip.shop_name }}</td>
+            <td>{{ vip.mobile }}</td>
+            <td>{{ vip.name }}</td>
+            <td>{{ vip.jifen_use }}</td>
+            <th>{{ vip.jifen_get }}</th>
+            <th>{{ vip.c_time }}</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

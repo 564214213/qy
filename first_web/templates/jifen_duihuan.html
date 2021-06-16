@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分兑换</title>
+</head>
+<body>
+    <h1 style="font-size: 35px;text-align: center">积分兑换</h1>
+    <a href="/shop/vip" style="text-decoration: none;font-size: 20px">返回</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p style="font-size: 30px;color:red">{{ error }}</p>
+        <p style="font-size: 25px">请输入会员手机号：<input type="text" name="mobile"></p>
+        <p style="font-size: 25px">请输入兑换的积分：<input type="text" name="jifen"></p>
+        <button>提交</button>
+    </form>
+</body>
+</html>
